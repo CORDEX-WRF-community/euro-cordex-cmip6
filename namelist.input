@@ -26,7 +26,7 @@
  io_form_input                       = 2,
  io_form_boundary                    = 2,
  auxinput4_inname                    = "wrflowinp_d<domain>",
- auxinput4_interval                  = 360, 360,
+ auxinput4_interval                  = 360,
  io_form_auxinput4                   = 2,
  io_form_auxinput2                   = 2,
  debug_level                         = 0,
@@ -43,8 +43,8 @@
  nocolons                            = .false., ! optional
  use_netcdf_classic                  = .false.,
  auxhist9_outname = "wrfcdx_d<domain>_<date>",
- auxhist9_interval = 60, 60,
- frames_per_auxhist9 = 24, 24,
+ auxhist9_interval = 60,
+ frames_per_auxhist9 = 24,
  io_form_auxhist9 = 2
 /
 
@@ -191,8 +191,8 @@ bl_mynn_cloudmix                    = 1, ! default=0
  spec_zone                           = 1,
  relax_zone                          = 9,
  spec_exp                            = 0.33,
- specified                           = .true., .false.,
- nested                              = .false., .true.,
+ specified                           = .true.,
+ nested                              = .false.,
 /
 
 &grib2
@@ -222,6 +222,6 @@ bl_mynn_cloudmix                    = 1, ! default=0
 
 ! special KGo
 !&afwa
-! afwa_diag_opt                      = 0, 0,
-! afwa_vil_opt                       = 1, 1,
+! afwa_diag_opt                      = 0,
+! afwa_vil_opt                       = 1,
 !/
