@@ -1,0 +1,228 @@
+&time_control
+ run_hours                           = 0,
+ start_year                          = 2006, 2006,
+ start_month                         =   01,   01,
+ start_day                           =   01,   01,
+ start_hour                          =    0,    0,
+ start_minute                        =    0,    0,
+ start_second                        =    0,    0,
+ end_year                            = 2007, 2007,
+ end_month                           =   01,   01,
+ end_day                             =   01,   01,
+ end_hour                            =    0,    0,
+ end_minute                          =    0,    0,
+ end_second                          =    0,    0,
+ interval_seconds                    = 21600,
+ input_from_file                     = .true., .true.,
+ fine_input_stream                   = 0, 2, 
+ history_interval                    = 47200, 47200, ! wrfout not needed because we use CDX-WRF module
+ frames_per_outfile                  = 1440, 1440,
+ restart                             = .true.,
+ restart_interval                    = 131400,
+ override_restart_timers             = .true.,
+ write_hist_at_0h_rst                = .false.,
+ io_form_history                     = 2,
+ io_form_restart                     = 102,
+ io_form_input                       = 2,
+ io_form_boundary                    = 2,
+ auxinput4_inname                    = "wrflowinp_d<domain>",
+ auxinput4_interval                  = 360, 360,
+ io_form_auxinput4                   = 2,
+ io_form_auxinput2                   = 2,
+ debug_level                         = 0,
+ diag_print                          = 0,
+ output_diagnostics                  = 1,
+ auxhist3_outname                    = "wrfxtrm_d<domain>_<date>",
+ io_form_auxhist3                    = 2,
+ auxhist3_interval                   = 1440, 1440,
+ frames_per_auxhist3                 = 1000, 1000,
+ auxhist23_outname                   = "wrfpress_d<domain>_<date>",
+ io_form_auxhist23                   = 2,
+ auxhist23_interval                  = 60, 60,
+ frames_per_auxhist23                = 24, 24, ! 100, 100,
+ nocolons                            = .false., ! optional
+ use_netcdf_classic                  = .false.,
+ auxhist9_outname = "wrfcdx_d<domain>_<date>",
+ auxhist9_interval = 60, 60,
+ frames_per_auxhist9 = 24, 24,
+ io_form_auxhist9 = 2
+
+/
+
+&domains
+ time_step                           = 75, 
+ time_step_fract_num                 = 0,
+ time_step_fract_den                 = 1,
+ max_dom                             = 2,
+ s_we                                = 1, 1,
+ e_we                                = 360, 491, 
+ s_sn                                = 1, 1,
+ e_sn                                = 351, 441,
+ s_vert                              = 1, 1,
+ e_vert                              = 50, 50,
+ p_top_requested                     = 2000,
+ num_metgrid_levels                  = 38, 
+ num_metgrid_soil_levels             = 4,
+ dx                                  = 15286.9, 3057.38, 
+ dy                                  = 15286.9, 3057.38,
+ grid_id                             = 1, 2,   
+ parent_id                           = 0, 1,   
+ i_parent_start                      = 1, 118, 
+ j_parent_start                      = 1, 99, 
+ parent_grid_ratio                   = 1, 5,   
+ parent_time_step_ratio              = 1, 5,   
+ feedback                            = 0,
+ smooth_option                       = 0,
+/
+
+&cordex
+! These settings produce all core variables and all but the three lightning-related Tier-1 variables
+ output_cordex      = 1, 
+ psl_diag           = 3,
+ psmooth            = 5,
+ ptarget            = 70000.,
+ wsgs_diag          = 1,
+ output_wb          = 0,
+ wsz100_diag        = 1,
+ z100m_wind         = 100.,
+ zmlagen_dqv        = 0.1,
+ zmlagen_dtheta     = 1.5,
+ potevp_diag        = 2,
+ convxtrm_diag      = 1,
+ fogvisibility_diag = 3,
+ fogvars            = 1,
+/
+
+&physics
+ mp_physics                          = 8, 8, ! Thompson
+ ra_lw_physics                       = 4, 4,
+ ra_sw_physics                       = 4, 4,
+ radt                                = 5, 5,
+ sf_sfclay_physics                   = 2, 2, ! Monin-Obukhov, 5=MYNN surface layer would work as well 
+ sf_surface_physics                  = 4, 4, ! Noah-MP
+ sf_lake_physics                     = 0, 0,
+ sf_urban_physics                    = 0, 0, 
+ bl_pbl_physics                      = 5, 5, ! MYNN 2.5
+ bldt                                = 0, 0, 
+ cu_physics                          = 3, 0, 
+ cudt                                = 0, 0, 
+ shcu_physics                        = 3, 3, ! GRIMS
+ isfflx                              = 1,
+ ifsnow                              = 1, ! works only if sf_surface_physics=1
+ icloud                              = 1, ! works only if ra_sw/lw_physics=1 or 4
+ num_soil_layers                     = 4,
+ num_land_cat                        = 22, ! default with MODIS lakes is 21 > need 22 for the UHOH alt. geo_em files
+ maxiens                             = 1,
+ maxens                              = 3,
+ maxens2                             = 3,
+ maxens3                             = 16,
+ ensdim                              = 144,
+ sst_update                          = 1,
+ tmn_update                          = 1,
+ sst_skin                            = 1,
+ bucket_mm                           = 1000.0, ! 100.0,
+!prec_acc_dt                         = 0, 
+ bucket_J                            = 1.e9,
+ !usemonalb                          = .false., ! use albedo from noah_mp. already false in registry
+ fractional_seaice                   = 0,
+ use_aero_icbc                       = .false., ! this is the climate baseline v01 setting, i.e. no external aerosol dataset is used, if it is included in the forcing files it will be ignored
+ swint_opt                           = 1,
+ aer_opt                             = 1, ! main ens. var.; this is the climate baseline v01 setting; 1 and 3 work with RRTMG, but if aer_opt=3 then mp_physics=28 can be used > have consistent aerosol data for radiation and microphys scheme (http://www2.mmm.ucar.edu/wrf/users/docs/user_guide_V3.8/users_guide_chap5.htm, sect 2.3)
+ o3input                             = 2,
+ sf_surface_mosaic                   = 0,
+ mosaic_cat                          = 3,
+ topo_shading                        = 0, 1, ! suggested by Josipa
+ slope_rad                           = 0, 1, ! suggested by Josipa
+ scalar_pblmix                       = 1, 1, ! suggested by Lluis: 1; mix consistent with PBL option exch_h, default=0
+ tracer_pblmix                       = 1, 1, ! suggested by Lluis: 1, default=0
+ !rdlai2d                             = .false., ! use LAI from input data, exists if sst_update=1, else use tabulated
+ grav_settling                       = 0, 0, ! suggested by Lluis: 1, better fog in valleys, does not work work with 22 landuse categories form UHOH
+! MYNN settings
+icloud_bl                           = 1, ! default=1
+bl_mynn_cloudpdf                    = 0, ! default=0
+bl_mynn_cloudmix                    = 1, ! default=0
+!bl_mynn_tkebudget                   = 0, 0, ! default=0
+!bl_mynn_mixlength                   = 1, ! default=1
+!bl_mynn_edmf                        = 0, 0, ! default=0
+!bl_mynn_edmf_mom                    = 1, 1, ! default =1
+!bl_mynn_edmf_tke                    = 0, 0, ! default=0
+/
+
+&noah_mp
+! all based on Josipas experience
+ dveg                                = 3, ! dynamic vegetation off, FVEG calculated
+ opt_crs                             = 1,
+ opt_sfc                             = 1, ! Monin-Obukhov surface-layer draf coefficient, default=1
+ opt_btr                             = 2,
+ opt_run                             = 1, ! Topmodel with groundwater
+ opt_frz                             = 1,
+ opt_inf                             = 2,
+ opt_rad                             = 3,
+ opt_alb                             = 2,
+ opt_snf                             = 3,
+ opt_tbot                            = 2,
+ opt_stc                             = 1,
+ opt_gla                             = 1,
+ opt_rsf                             = 1,
+/
+
+&fdda
+/
+
+&dynamics
+ diff_opt                            = 2, 2,
+ km_opt                              = 4, 4,
+ diff_6th_opt                        = 2, 2,
+ diff_6th_factor                     = 0.12, 0.12,
+ base_temp                           = 290.
+ damp_opt                            = 3,
+ zdamp                               = 5000., 5000.,
+ dampcoef                            = 0.2, 0.2,
+ w_damping                           = 1,
+ khdif                               = 0, 0,
+ kvdif                               = 0, 0,
+ non_hydrostatic                     = .true., .true.,
+ moist_adv_opt                       = 1, 1,    
+ scalar_adv_opt                      = 1, 1,    
+ epssm                               = 0.3, 0.3, ! 0.1 is default, recommended by Markel and Theodore is 0.3
+/
+
+&bdy_control
+ spec_bdy_width                      = 10,
+ spec_zone                           = 1,
+ relax_zone                          = 9,
+ spec_exp                            = 0.33,
+ specified                           = .true., .false.,
+ nested                              = .false., .true.,
+/
+
+&grib2
+/
+
+&namelist_quilt
+ nio_tasks_per_group                 = 0,
+ nio_groups                          = 1,
+/
+
+&dfi_control
+/
+
+&scm
+/
+
+&tc
+/
+
+&diags
+ p_lev_diags                         = 1,
+ num_press_levels                    = 6,
+ press_levels                        = 100000, 92500, 85000, 70000, 50000, 20000, 
+ use_tot_or_hyd_p                    = 1,
+ p_lev_missing                       = -999.,
+/
+
+! special KGo
+!&afwa
+! afwa_diag_opt                      = 0, 0,               
+! afwa_vil_opt                       = 1, 1,
+!/
