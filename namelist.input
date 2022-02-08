@@ -137,14 +137,14 @@
  !rdlai2d                             = .false., ! use LAI from input data, exists if sst_update=1, else use tabulated
  grav_settling                       = 0, ! suggested by Lluis: 1, better fog in valleys, does not work work with 22 landuse categories form UHOH
 ! MYNN settings
-icloud_bl                           = 1, ! default=1
-bl_mynn_cloudpdf                    = 0, ! default=0
-bl_mynn_cloudmix                    = 1, ! default=0
-!bl_mynn_tkebudget                   = 0, ! default=0
-!bl_mynn_mixlength                   = 1, ! default=1
-!bl_mynn_edmf                        = 0, ! default=0
-!bl_mynn_edmf_mom                    = 1, ! default=1
-!bl_mynn_edmf_tke                    = 0, ! default=0
+ icloud_bl                           = 1, ! default=1
+ bl_mynn_cloudpdf                    = 2, ! from Chaboureau and Bechtold 2002 (default in v4.3)
+ bl_mynn_cloudmix                    = 1, ! default=0
+ bl_mynn_tkebudget                   = 0, ! TKE in the output
+ bl_mynn_mixlength                   = 1, ! RAP/HRRR (BouLac in free atmosphere) (new default=2 in v4.3)
+ bl_mynn_edmf                        = 0, ! need to be switched off if shallow cumulus scheme is used (new default=1 in v4.3)
+ bl_mynn_edmf_mom                    = 0, ! if =1, assumes bl_mynn_edmf=1
+ bl_mynn_edmf_tke                    = 0, ! if =1, assumes bl_mynn_edmf=1
 /
 
 &noah_mp
