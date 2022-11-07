@@ -1,0 +1,41 @@
+&share
+ wrf_core = 'ARW',
+ max_dom = 1,
+ io_form_geogrid = 2,
+ start_date = 2003-12-01_00:00:00,
+ end_date   = 2004-04-01_00:00:00,
+ interval_seconds = 21600,
+ nocolons = .true.,
+/
+
+&geogrid
+ parent_id              = 1,
+ parent_grid_ratio      = 1,
+ i_parent_start         = 1,
+ j_parent_start         = 1,
+ dx                     = 0.11,
+ dy                     = 0.11,
+ e_we                   = 445,
+ e_sn                   = 433,
+ map_proj               = 'lat-lon',
+ ref_x                  = 15,
+ ref_y                  = 15,
+ ref_lat                = 21.9878,
+ ref_lon                = -10.0639,
+ pole_lat               = 39.25,
+ pole_lon               = 18.0,
+ stand_lon              = -18.0,
+ geog_data_res          = '30s+default',
+ geog_data_path         = '../WPS_GEOG/',
+/
+
+&ungrib
+ out_format = 'WPS',
+ prefix = 'FILE',
+/
+
+&metgrid
+ constants_name = 'TAVGSFC',
+ fg_name = 'FILE',
+ io_form_metgrid = 2,
+/

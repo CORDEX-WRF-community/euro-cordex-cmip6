@@ -1,0 +1,18 @@
+# Static data in WRF-CORDEX-EUR-11 simulations
+
+This folder contains geogrid files, in which default static data at highest available resolution have been used for most variables. These default static data have been downloaded from [wrf user page](https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html). The files also contain variables based on 3 new data sets that have been adapted for WPS:
+
+1. **Leaf area index (LAI)** data are based on SPOT satellite data downloaded from [CDS](https://cds.climate.copernicus.eu/cdsapp#!/dataset/satellite-lai-fapar?tab=overview) and processed for use in WPS. Data are monthly mean values over period of 15 years  (i.e. from 1999 to 2014) at 30s resolution.
+The decision to use these new data set is based on the the test run and the analysys [LAI_analysis_map_vs_table.pdf](./LAI_analysis_map_vs_table.pdf).
+NOTE: In winter months due to the position of the SPOT satellite, in the far north of the EUR-11 CORDEX domain missing values appear. These values are filled with the values from the default LAI map based on MODIS, also avilable at 30s resolution.
+All the details on the preprocessing procedure can be found in the github repository [lai4wrf](https://github.com/AEI-CORDyS/lai4wrf).
+
+2. **Land use data** based on the higher resolution and more up-to-date COoRdination of INformation on the Environment [CORINE](https://land.copernicus.eu/pan-european/corine-land-cover) data than MODIS. The data are collected during 2011 and 2012 at 100 m horizontal resolution. Raw CORINE defines more land use classes than the MODIS data set available for WPS, therefore the preparation included a re-classification to the MODIS land cover categories to allow a straightforward implementation into WPS. This was done using a judicious merging of the appropriate categories within a Geographic Information System (GIS) software and the conversion to WPS readable data [`convert_geotiff`](https://github.com/openwfm/convert_geotiff)’ utility was used.
+The data set covers only Europe, and the missing part outside of Europe, but within the EUR-11 domain, is filled with the default MODIS data at 15s resolution. 
+Black sea in CORINE is categorized as sea, while in MODIS with lakes - it is a lake. The final file is fixed so the Black sea is set to lake category [geogrid_BS2lake](./geo_em.d01_EUR-11_newLAI_BlackSea2lake.nc).
+Another file is created, [geogrid_BS2sea](./geo_em.d01_EUR-11_newLAI_BlackSea2sea.nc), in which the Black sea is set to sea category. 
+
+3. **Top soil texture data** are based on the global Harmonized World Soil Database v 1.2 at 30s resolution [HWSD](https://www.fao.org/soils-portal/data-hub/soil-maps-and-databases/harmonized-world-soil-database-v12/en/) and Soil Map of Germany 1:1 000 000 [BÜK1000](https://www.bgr.bund.de/DE/Themen/Boden/Informationsgrundlagen/Bodenkundliche_Karten_Datenbanken/BUEK1000/buek1000_node.html). These data sets are both adapted from WRF and published ([Milovac et al. 2018](doi:10.1594/WDCC/WRF_NOAH_HWSD_world_TOP_ST_v121); [Milovac et al., 2014](doi:10.1594/WDCC/WRF_NOAH_BUK_Ger_top_SOILTYP)).
+
+Filling the missing data gaps of LAI data and fixining the category for the Black Sea was done using [notebook](./update_static_data.ipynb). All the intemediate geogrid files can be downloaded from the links given in the [notebook](./update_static_data.ipynb).
+
