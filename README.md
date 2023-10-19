@@ -10,7 +10,7 @@ Please, keep this **repository free from large binary files**. Just link them fr
 
 The WRF version agreed to be used for these simulations is V4.5.1. There are several bugs in NoahMP that were fixed in this version, but some remain, so it is recommended to use directly the branch v4.5.1-EUR from the _CORDEX WRF community_ fork:
 ```bash
-git clone --recurse-submodules -b v4.5.1-devel  https://github.com/CORDEX-WRF-community/WRF.git
+git clone --recurse-submodules -b v4.5.1.2  https://github.com/CORDEX-WRF-community/WRF.git
 ```
 The configuration for the default EURO-CORDEX CMIP6 runs requires also:
 
