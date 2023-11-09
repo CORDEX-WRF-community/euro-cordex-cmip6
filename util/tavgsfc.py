@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# tavgsfc.py v0.2 (2023-11-08)
+# tavgsfc.py
 #
 # Inserts running mean lowest model level temperatures into WRF met_em
 # files. The new variable TAVGSFC is used by WRF as skin temperature
@@ -42,11 +42,22 @@ def process_wrf_files(pattern, overwrite):
         input_file.close()
         continue
     else:
-      tavgsfc = input_file.createVariable(varname, 'f4', ('Time', 'south_north', 'west_east'))
-      for attr_name in input_file.variables['TT'].ncattrs():
-        setattr(tavgsfc, attr_name, getattr(input_file.variables['TT'], attr_name))
-      setattr(tavgsfc, 'MemoryOrder', 'XY ')
-      tavgsfc[:] = running_mean
+      # close the input file as it will be modified
+      input_file.close()
+      # extract SST into dummy file (this is to be replaced by the running mean of TT)
+      os.system("ncks -v SST "+file_name+" dummy.nc") 
+      # rename SST in dummy file to TAVGSFC
+      os.system("ncrename -h -O -v SST,"+varname+" dummy.nc") 
+      # append TAVGSFC back to the original input file
+      os.system("ncks -A -C -v "+varname+" dummy.nc "+file_name) 
+      # remove the dummy file
+      os.system("rm dummy.nc") 
+      # reopen the input file (TAVGSFC was added)
+      input_file = nc.Dataset(file_name, 'a') 
+      # replace TAVGSFC with running mean
+      input_file.variables[varname][:] = running_mean 
+      # set the description attribute (now all attributes are correct)
+      setattr(input_file.variables[varname], 'description', '2 m Temperature') # 
     # Add the global attribute flag
     input_file.setncattr('FLAG_TAVGSFC', 1)
     input_file.close()
