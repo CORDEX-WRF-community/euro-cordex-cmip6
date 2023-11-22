@@ -40,7 +40,8 @@
  io_form_auxhist23                   = 2,
  auxhist23_interval                  = 60,
  frames_per_auxhist23                = 24,
- iofields_filename                   = "./myoutfields.txt",
+ iofields_filename                   = "./iofields.txt",
+ ignore_iofields_warning             = .false.,
 ! Aerosols 
  auxinput15_inname                   = 'AOD198011_d01',
  auxinput15_interval                 = 1440,

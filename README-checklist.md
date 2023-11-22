@@ -9,7 +9,7 @@ The steps to run the WRF:
 
  - [ ] Place in your running folder all required files:
 
-   - [ ] `myoutfields.txt` (check if you need additional variables)
+   - [ ] `iofields.txt` (check if you need additional variables)
    - [ ] link the GHG concentration file corresponding to your driving GCM scenario. E.g. for SSP3-7.0:
      ```bash
      ln -sh CAMtr_volume_mixing_ratio.SSP370 CAMtr_volume_mixing_ratio```
