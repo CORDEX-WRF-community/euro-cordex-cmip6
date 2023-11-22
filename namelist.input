@@ -149,7 +149,6 @@
  icloud_bl                           = 1, 
  bl_mynn_cloudpdf                    = 2   ! from Chaboureau and Bechtold 2002 (default in v4.3)
  bl_mynn_cloudmix                    = 1, 
- bl_mynn_tkebudget                   = 0, 
  bl_mynn_mixlength                   = 1, 
  bl_mynn_edmf                        = 1,  ! MYNN-EDMF (Olson et al. 2019)
  bl_mynn_edmf_mom                    = 1,  
