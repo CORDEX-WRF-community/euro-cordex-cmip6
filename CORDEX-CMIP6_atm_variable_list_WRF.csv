@@ -28,7 +28,7 @@ tauu,CD+U10,,Surface Downward Eastward Wind Stress,
 tauv,CD+V10,,Surface Downward Northward Wind Stress,
 sfcWindmax,SPDUV10MAX (from wrfxtrm),,Daily Maximum Near-Surface Wind Speed,
 sund,SWDOWN,,Daily Duration of Sunshine,
-rsdsdir,ACSWDNBC+I_ACSWDNBC,,TBD. Surface Direct Downwelling Shortwave Radiation,clear sky SW radiation at the surface?
+rsdsdir,ACSWDNBC+I_ACSWDNBC,,Surface Direct Downwelling Shortwave Radiation,TBD. Clear sky SW radiation at the surface?
 rsus,ACSWUPB+I_ACSWUPB,,Surface Upwelling Shortwave Radiation,
 rlus,ACLWUPB+I_ACSWUPB,,Surface Upwelling Longwave Radiation,
 rlut,ACLWUPT+I_ACSWUPB,,TOA Outgoing Longwave Radiation,
@@ -127,8 +127,8 @@ rsdscs,ACSWDNBC+I_ACSWDNBC,,Surface Downwelling Clear-Sky Shortwave Radiation,
 rldscs,ACLWDNBC+I_ACLWDNBC,,Surface Downwelling Clear-Sky Longwave Radiation,
 rsuscs,ACSWUPBC+I_ACLWDNBC,,Surface Upwelling Clear-Sky Shortwave Radiation,
 rluscs,ACLWUPBC+I_ACLWDNBC,,Surface Upwelling Clear-Sky Longwave Radiation,
-rsutcs,ACSWUPTC+I_ACSWUPTC,,TBD. TOA Outgoing Clear-Sky Shortwave Radiation,
-rlutcs,ACLWUPTC+I_ACLWUPTC,,TBD. TOA Outgoing Clear-Sky Longwave Radiation,
+rsutcs,ACSWUPTC+I_ACSWUPTC,,TOA Outgoing Clear-Sky Shortwave Radiation,TBD.
+rlutcs,ACLWUPTC+I_ACLWUPTC,,TOA Outgoing Clear-Sky Longwave Radiation,TBD.
 z0,ZNT,,Surface Roughness Length,TBD.
 CAPE,P+PB+PH+PHB+T+QVAPOR,,Convective Available Potential Energy,
 LI,P+PB+PH+PHB+T+QVAPOR,,Lifted Index,
