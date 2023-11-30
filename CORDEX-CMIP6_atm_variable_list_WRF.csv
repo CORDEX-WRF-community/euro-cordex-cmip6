@@ -196,5 +196,5 @@ mrsofc,,,Capacity of Soil to Store Water (Field Capacity),TBD. extract from MPTA
 rootd,,,Maximum Root Depth,TBD. Extract from MPTABLE.TBL??
 sftlaf,LAKEMASK,,Percentage of the Grid Cell Occupied by Lake,
 sfturf,LUINDEX,,Percentage of the Grid Cell Occupied by City,
-dtb,LUINDEX,,Depth to Bedrock,
+dtb,LUINDEX,,Depth to Bedrock,,TBD,
 areacella,,,Atmosphere Grid-Cell Area,TBD.
