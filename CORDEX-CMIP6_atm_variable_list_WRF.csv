@@ -34,8 +34,8 @@ rlus,ACLWUPB+I_ACSWUPB,,Surface Upwelling Longwave Radiation,
 rlut,ACLWUPT+I_ACSWUPB,,TOA Outgoing Longwave Radiation,
 rsdt,ACSWDNT+I_ACSWUPB,,TOA Incident Shortwave Radiation,
 rsut,ACSWUPT+I_ACSWUPT,,TOA Outgoing Shortwave Radiation,
-hfls,HFX,ACHFX,Surface Upward Latent Heat Flux,Better accumulated variables
-hfss,LH,ACLHF,Surface Upward Sensible Heat Flux,Better accumulated variables
+hfls,HFX,ACHFX,Surface Upward Latent Heat Flux,Accumulated variables not recommended for long runs since they have no bucket option
+hfss,LH,ACLHF,Surface Upward Sensible Heat Flux,Accumulated variables not recommended for long runs since they have no bucket option
 mrfso,,,Soil Frozen Water Content,
 mrfsos,,,Frozen Water Content in Upper Portion of Soil Column,TBD.
 mrsfl,,,Frozen Water Content of Soil Layer,TBD.
