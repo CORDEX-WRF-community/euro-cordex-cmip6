@@ -1,3 +1,13 @@
+# Functionality of the script:
+# (1) checks if there is a restart file in the WRF/run folder, an if so reads the start date.
+#      If not, the start date will be read from the namelist.input. 
+# (2) sets the right start and end date in the namelist.input (end date is set to be the start date + 1year)  
+# (3) extracts the correct dates from multiple aerosol files that need to be placed in the WRF/run folder 
+# (4) creates the file named "AOD_{DOMAIN}" 
+# (5) updates CO2 in MPTABLE.TBL accorinig to the starting year
+# 
+# To run the script: python update_and_restart.py
+
 import re
 import os
 import sys
