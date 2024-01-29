@@ -8,9 +8,9 @@ Please, keep this **repository free from large binary files**. Just link them fr
 
 ## WRF451Q
 
-The WRF version agreed to be used for these simulations is V4.5.1. There are several bugs in NoahMP that were fixed in this version, but some remain, so it is recommended to use directly the version tagged v4.5.1.3 from the _CORDEX WRF community_ fork:
+The WRF version agreed to be used for these simulations is V4.5.1. There are several bugs in NoahMP that were fixed in this version, but some remain, so it is recommended to use directly the version tagged v4.5.1.4 from the _CORDEX WRF community_ fork:
 ```bash
-git clone --recurse-submodules -b v4.5.1.3  https://github.com/CORDEX-WRF-community/WRF.git
+git clone --recurse-submodules -b v4.5.1.4  https://github.com/CORDEX-WRF-community/WRF.git
 ```
 The configuration for the default EURO-CORDEX CMIP6 runs (WRF451Q) requires also:
 

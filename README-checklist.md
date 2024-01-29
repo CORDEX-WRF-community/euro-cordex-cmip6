@@ -1,9 +1,9 @@
 # Checklist to start running EURO-CORDEX WRF simulations
 
-The steps to run the WRF:
+The steps to run WRF:
 
- - [ ] Get your code from CWC WRF v4.5.1.3 \
-```git clone --recurse-submodules -b v4.5.1.3  https://github.com/CORDEX-WRF-community/WRF.git```
+ - [ ] Get your code from CWC WRF v4.5.1.4 \
+```git clone --recurse-submodules -b v4.5.1.4  https://github.com/CORDEX-WRF-community/WRF.git```
 
  - [ ] Adjust the calendar to that of your driving GCM before compiling the code
  
