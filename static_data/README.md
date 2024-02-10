@@ -23,6 +23,8 @@ Contact person: Hans-Stefan Bauer
 
 | Static dataset | Description |
 |-----|-------------|
+| [geo_em.d01.EUR-12-v4.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc) | Static data on the EUR-12 rotated lon-lat grid using SPOT LAI, HSWD soil texture and LANDMATE PFT land cover, with extended permanent wetlands based on CORINE LAND COVER.|
+| [geo_em.d01.EUR-12-v3.1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.1.nc) | Static data on the EUR-12 rotated lon-lat grid using SPOT LAI, HSWD soil texture and LANDMATE PFT land cover, redone v3.|
 | [geo_em.d01.EUR-12-v3.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.nc) | As [v2](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v2.nc), but using conservative interpolation from higher resolution LANDMATE_PFT and water surfaces data. See [#4](https://github.com/CORDEX-WRF-community/euro-cordex-cmip6/issues/4). |
 | [geo_em.d01.EUR-12-v2.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v2.nc) | Static data on the EUR-12 rotated lon-lat grid using SPOT LAI, HSWD soil texture and LANDMATE PFT land cover |
-| [geo_em.d01.EUR-12-v1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v1.nc) | Static data on the EUR-12 rotated lon-lat grid using SPOT LAI, HSWD soil texture and      CORINE land cover (where available, elsewhere MODIS).|
+| [geo_em.d01.EUR-12-v1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v1.nc) | Static data on the EUR-12 rotated lon-lat grid using SPOT LAI, HSWD soil texture and      CORINE land cover (where available, elsewhere MODIS).
