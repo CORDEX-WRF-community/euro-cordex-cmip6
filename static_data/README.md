@@ -1,6 +1,6 @@
 # Static data in WRF-CORDEX-EUR-11 simulations
 
-This folder provides access to the final geogrid file [geo_em.d01.EUR-12-v3.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.nc) in which default static data at highest available resolution have been used for most variables.
+This folder provides access to the final geogrid file [geo_em.d01.EUR-12-v4.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc) in which default static data at highest available resolution have been used for most variables.
 These default static data have been downloaded from [wrf user page](https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html).
 The file also contains variables based on 3 new data sets that have been adapted for WPS:
 

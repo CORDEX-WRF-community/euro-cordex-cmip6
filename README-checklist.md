@@ -12,7 +12,7 @@ The steps to run WRF:
  
  - [ ] Processing LBCs
 
-   - [ ] Use the [geo_em.d01.EUR-12-v3.nc file](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.nc) provided in this repo (see [here](./static_data) for details)
+   - [ ] Use the [geo_em.d01.EUR-12-v4.nc file](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc) provided in this repo (see [here](./static_data) for details)
    - [ ] Adjust lake temperatures (see [here](https://github.com/CORDEX-WRF-community/euro-cordex-cmip6/pull/5))   
 
  - [ ] Running WRF. Place in your running folder all required files:
