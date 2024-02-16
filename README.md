@@ -23,4 +23,4 @@ Follow the [checklist](./README-checklist.md) to setup your simulation.
 
 ### Driving model data
 
-This model configuration has been used to perform [evaluation and scenario EURO-CORDEX simulations](https://wcrp-cordex.github.io/simulation-status/CORDEX_CMIP6_status_by_experiment.html#EUR-11-eWRFcom) driven by different Global Climate Models. The processing of these driving sources is described in [README-driving-sources.md](./README-driving-sources.md).
+This model configuration has been used to perform [evaluation and scenario EURO-CORDEX simulations](https://wcrp-cordex.github.io/simulation-status/CORDEX_CMIP6_status_by_experiment.html#EUR-12-eWRFcom) driven by different Global Climate Models. The processing of these driving sources is described in [README-driving-sources.md](./README-driving-sources.md).
