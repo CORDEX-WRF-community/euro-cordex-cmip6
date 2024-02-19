@@ -17,7 +17,7 @@ The configuration for the default EURO-CORDEX CMIP6 runs (WRF451Q) requires also
 |File | Description |
 |-----|-------------|
 | [namelist.input](./namelist.input) | WRF namelist file in this repository. |
-| [geo_em.d01.EUR-12-v4.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc) | Static data on the EUR-12 rotated lon-lat grid. See [static_data](./static_data) folder for details.|
+| [geo_em.d01.EUR-12-v4.1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.1.nc) | Static data on the EUR-12 rotated lon-lat grid. See [static_data](./static_data) folder for details.|
 
 Follow the [checklist](./README-checklist.md) to setup your simulation.
 
