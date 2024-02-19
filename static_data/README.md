@@ -1,6 +1,6 @@
 # Static data in WRF-CORDEX-EUR-11 simulations
 
-This folder provides access to the final geogrid file [geo_em.d01.EUR-12-v4.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc) in which default static data at highest available resolution have been used for most variables.
+This folder provides access to the final geogrid file [geo_em.d01.EUR-12-v4.1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.1.nc) in which default static data at highest available resolution have been used for most variables.
 These default static data have been downloaded from [wrf user page](https://www2.mmm.ucar.edu/wrf/users/download/get_sources_wps_geog.html).
 The file also contains variables based on 3 new data sets that have been adapted for WPS:
 
@@ -23,6 +23,7 @@ Contact person: Hans-Stefan Bauer
 
 | Static dataset | Description |
 |-----|-------------|
+| [geo_em.d01.EUR-12-v4.1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.1.nc) | As [v4](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc), but with corrected _FillValue attribute for LU_INDEX, LANDMASK, LANDUSEF variables.
 | [geo_em.d01.EUR-12-v4.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v4.nc) | Static data on the EUR-12 rotated lon-lat grid using SPOT LAI, HSWD soil texture and LANDMATE PFT land cover, with extended permanent wetlands based on CORINE LAND COVER.|
 | [geo_em.d01.EUR-12-v3.1.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.1.nc) | As [v3](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.nc), just redone with updated cdo tools.|
 | [geo_em.d01.EUR-12-v3.nc](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v3.nc) | As [v2](https://meteo.unican.es/work/josipa/euro-cordex-cmip6/static_data/geo_em.d01.EUR-12-v2.nc), but using conservative interpolation from higher resolution LANDMATE_PFT and water surfaces data. See [#4](https://github.com/CORDEX-WRF-community/euro-cordex-cmip6/issues/4). |
