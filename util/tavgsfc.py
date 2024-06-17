@@ -50,7 +50,7 @@ def process_wrf_files(pattern, overwrite):
     # Add the global attribute flag
     input_file.setncattr('FLAG_TAVGSFC', 1)
     input_file.close()
-  
+    os.system("ncatted -O -h -a FLAG_TAVGSFC,global,m,l,1 " + file_name)  
 
 def main():
   parser = argparse.ArgumentParser(
